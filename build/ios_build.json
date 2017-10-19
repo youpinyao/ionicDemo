@@ -1,0 +1,12 @@
+{
+    "ios": {
+        "debug": {
+            "codeSignIdentitiy": "iPhone Developer: pinyao you (BUB49MG5Q9)",
+            "provisioningProfile": "c61da2b5-7f63-40f2-8a27-23e1ad46b408"
+        },
+        "release": {
+            "codeSignIdentitiy": "iPhone Developer: pinyao you (BUB49MG5Q9)",
+            "provisioningProfile": "c61da2b5-7f63-40f2-8a27-23e1ad46b408"
+        }
+    }
+}

@@ -15,3 +15,12 @@ npm run start
 ```
 npm run build
 ```
+
+## 设置开屏图
+
+[http://ionicframework.com/docs/cli/cordova/resources/](http://ionicframework.com/docs/cli/cordova/resources/)
+
+
+## 操作平台 ios 或 android
+
+[http://ionicframework.com/docs/cli/cordova/platform/](http://ionicframework.com/docs/cli/cordova/platform/)
