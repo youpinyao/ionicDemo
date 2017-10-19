@@ -292,8 +292,16 @@ __webpack_require__("Ghny");
 var app = angular.module('app', ['ionic', 'convertToAjax', 'ionicConfig']);
 var router = __webpack_require__("aWmp")['default'];
 
-app.run(['$ionicPlatform', '$rootScope', '$ionicHistory', '$ionicViewSwitcher', '$state', function ($ionicPlatform, $rootScope, $ionicHistory, $ionicViewSwitcher, $state) {
+app.run(['$ionicPlatform', '$rootScope', '$ionicHistory', '$ionicViewSwitcher', '$state', '$timeout', function ($ionicPlatform, $rootScope, $ionicHistory, $ionicViewSwitcher, $state, $timeout) {
   $ionicPlatform.ready(function () {
+    // 隐藏欢迎界面
+    $timeout(function () {
+      if (window.navigator.splashscreen) {
+        window.navigator.splashscreen.hide();
+      }
+      console.log('cordova splashscreen');
+    }, ionic.Platform.isIOS() ? 0 : 1000);
+
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
     if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
@@ -302,7 +310,7 @@ app.run(['$ionicPlatform', '$rootScope', '$ionicHistory', '$ionicViewSwitcher', 
     }
     if (window.StatusBar) {
       // org.apache.cordova.statusbar required
-      StatusBar.styleDefault();
+      StatusBar.styleLightContent();
     }
   });
 
@@ -364,7 +372,7 @@ module.exports = "<ion-view ng-controller=\"tab3Ctrl\">\n  <ion-content>\n  tab3
 /***/ "zPdR":
 /***/ (function(module, exports) {
 
-module.exports = "<ion-view ng-controller=\"tab1Ctrl\">\n  <ion-content>\n  tab1\n  <a href=\"#/second\">to second</a>\n  </ion-content>\n</ion-view>\n";
+module.exports = "<ion-view ng-controller=\"tab1Ctrl\">\n  <ion-content>\n    <a class=\"button button-positive\"\n      style=\"margin: 30px\"\n      href=\"#/second\">to second</a>\n  </ion-content>\n</ion-view>\n";
 
 /***/ })
 
