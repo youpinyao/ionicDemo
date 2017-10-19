@@ -4,6 +4,14 @@
 [中文文档](http://www.ionic.wang/js_doc-index-id-21.html)
 [图标](http://ionicons.com/)
 
+## 环境要求
+
+```node
+node stable
+cordova
+ionic
+```
+
 ## 调试
 
 ```node
