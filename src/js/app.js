@@ -14,23 +14,33 @@ import './service/ionicConfig.js';
 const app = angular.module('app', ['ionic', 'convertToAjax', 'ionicConfig']);
 const router = require('./router').default;
 
-app.run(['$ionicPlatform', '$rootScope', '$ionicHistory', '$ionicViewSwitcher', '$state', function(
-  $ionicPlatform, $rootScope, $ionicHistory, $ionicViewSwitcher, $state) {
-  $ionicPlatform.ready(function() {
-    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-    // for form inputs)
-    if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
-      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-      cordova.plugins.Keyboard.disableScroll(true);
-    }
-    if (window.StatusBar) {
-      // org.apache.cordova.statusbar required
-      StatusBar.styleDefault();
-    }
-  });
+app.run(['$ionicPlatform', '$rootScope', '$ionicHistory', '$ionicViewSwitcher', '$state',
+  '$timeout',
+  function($ionicPlatform, $rootScope, $ionicHistory, $ionicViewSwitcher, $state, $timeout) {
+    $ionicPlatform.ready(function() {
+      // 隐藏欢迎界面
+      $timeout(function() {
+        if (window.navigator.splashscreen) {
+          window.navigator.splashscreen.hide();
+        }
+        console.log('cordova splashscreen');
+      }, ionic.Platform.isIOS() ? 0 : 1000);
 
-  window.ionicHistory = $ionicHistory;
-}]);
+      // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+      // for form inputs)
+      if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
+        cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+        cordova.plugins.Keyboard.disableScroll(true);
+      }
+      if (window.StatusBar) {
+        // org.apache.cordova.statusbar required
+        StatusBar.styleLightContent();
+      }
+    });
+
+    window.ionicHistory = $ionicHistory;
+  }
+]);
 
 app.config(['$stateProvider', '$urlRouterProvider', '$ionicConfigProvider', '$httpProvider',
   function($stateProvider, $urlRouterProvider, $ionicConfigProvider, $httpProvider) {

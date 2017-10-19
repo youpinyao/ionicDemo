@@ -6,20 +6,19 @@
 
 ## 调试
 
-```
+```node
 npm run start
 ```
 
 ## 构建
 
-```
+``` node
 npm run build
 ```
 
 ## 设置开屏图
 
 [http://ionicframework.com/docs/cli/cordova/resources/](http://ionicframework.com/docs/cli/cordova/resources/)
-
 
 ## 操作平台 ios 或 android
 

@@ -12,9 +12,9 @@
   },
   "globals": {
     "$": true,
+    "window": true,
     "angular": true,
     "ionic": true,
-    "window": true,
     "cordova": true,
     "StatusBar": true
   },
