@@ -20,6 +20,6 @@ npm run build
 
 [http://ionicframework.com/docs/cli/cordova/resources/](http://ionicframework.com/docs/cli/cordova/resources/)
 
-## 操作平台 ios 或 android
+## 增删平台 ios 或 android
 
 [http://ionicframework.com/docs/cli/cordova/platform/](http://ionicframework.com/docs/cli/cordova/platform/)
