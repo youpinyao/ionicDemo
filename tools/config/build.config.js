@@ -1,6 +1,6 @@
 const webpack = require('webpack');
 const webpackMerge = require('webpack-merge');
-const AppCachePlugin = require('appcache-webpack-plugin');
+// const AppCachePlugin = require('appcache-webpack-plugin');
 const commonConfig = require('./base.config.js');
 
 module.exports = function() {
@@ -29,14 +29,14 @@ module.exports = function() {
         }
       }),
 
-      new AppCachePlugin({
-        // cache: ['someOtherAsset.jpg'],
-        // network: null,  // No network access allowed!
-        // fallback: ['failwhale.jpg'],
-        // settings: ['prefer-online'],
-        // exclude: ['file.txt', /.*\.js$/],  // Exclude file.txt and all .js files
-        output: 'my-manifest.appcache'
-      }),
+      // new AppCachePlugin({
+      //   // cache: ['someOtherAsset.jpg'],
+      //   // network: null,  // No network access allowed!
+      //   // fallback: ['failwhale.jpg'],
+      //   // settings: ['prefer-online'],
+      //   // exclude: ['file.txt', /.*\.js$/],  // Exclude file.txt and all .js files
+      //   output: 'my-manifest.appcache'
+      // }),
 
       new webpack.optimize.UglifyJsPlugin({
         sourceMap: false,

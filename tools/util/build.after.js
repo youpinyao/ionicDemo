@@ -21,9 +21,9 @@ module.exports = function() {
           if (filename.indexOf('.html') !== -1) {
             convertFile(path.join(buildPath, filename));
           }
-          if (filename.indexOf('.appcache') !== -1) {
-            convertManifest(path.join(buildPath, filename));
-          }
+          // if (filename.indexOf('.appcache') !== -1) {
+          //   convertManifest(path.join(buildPath, filename));
+          // }
         }
       });
     });
@@ -92,7 +92,7 @@ module.exports = function() {
       const replaceAttrs = ['href', 'src', 'data-src'];
 
       // 添加缓存配置文件
-      $('html').attr('manifest', 'my-manifest.appcache');
+      // $('html').attr('manifest', 'my-manifest.appcache');
 
       $('link, script, img, video, audio, div[data-src]').each(function() {
         replaceAttrs.forEach(d => {
