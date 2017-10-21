@@ -7,3 +7,4 @@ plugins/
 npm-debug.log
 .dll
 .chcpenv
+www
