@@ -7,15 +7,33 @@
 ## 环境要求
 
 ```node
-node stable
+node
 cordova
 ionic
+cordova-hot-code-push-cli
 ```
 
 ## 调试
 
+### 本地浏览器调试
+
 ```node
-npm run start
+npm run webpack:start
+访问：http://localhost:8686
+```
+
+### 真机调试
+
+```node
+
+对应打包的app的
+config.xml 配置文件
+<config-file url="http://192.168.3.11:31284/chcp.json" />
+
+1. npm run start
+
+2. 在同一局域网下打开app
+
 ```
 
 ## 构建
@@ -31,3 +49,7 @@ npm run build
 ## 增删平台 ios 或 android
 
 [http://ionicframework.com/docs/cli/cordova/platform/](http://ionicframework.com/docs/cli/cordova/platform/)
+
+## 热更新
+
+[https://github.com/nordnet/cordova-hot-code-push](https://github.com/nordnet/cordova-hot-code-push)

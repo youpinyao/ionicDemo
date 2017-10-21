@@ -1,0 +1,78 @@
+[
+  {
+    "file": ".dll/assets/ionicons.05acfdb568b3df49ad31355b19495d4a.woff",
+    "hash": "05acfdb568b3df49ad31355b19495d4a"
+  },
+  {
+    "file": ".dll/assets/ionicons.24712f6c47821394fba7942fbb52c3b2.ttf",
+    "hash": "24712f6c47821394fba7942fbb52c3b2"
+  },
+  {
+    "file": ".dll/assets/ionicons.2c2ae068be3b089e0a5b59abb1831550.eot",
+    "hash": "2c2ae068be3b089e0a5b59abb1831550"
+  },
+  {
+    "file": ".dll/assets/ionicons.621bd386841f74e0053cb8e67f8a0604.svg",
+    "hash": "621bd386841f74e0053cb8e67f8a0604"
+  },
+  {
+    "file": ".dll/vendor-manifest.json",
+    "hash": "0c00b11ecc840050639a4c92b03e18f9"
+  },
+  {
+    "file": ".dll/vendor.dll.css",
+    "hash": "0d0115826ba1197fc21849a858cdb998"
+  },
+  {
+    "file": ".dll/vendor.dll.js",
+    "hash": "c17691b89eb71eea7682779e572f264e"
+  },
+  {
+    "file": ".dll/version.json",
+    "hash": "d0bc14d16b33949f64c6916d13a87c5f"
+  },
+  {
+    "file": "assets/ionicons.05acfdb568b3df49ad31355b19495d4a.woff",
+    "hash": "05acfdb568b3df49ad31355b19495d4a"
+  },
+  {
+    "file": "assets/ionicons.24712f6c47821394fba7942fbb52c3b2.ttf",
+    "hash": "24712f6c47821394fba7942fbb52c3b2"
+  },
+  {
+    "file": "assets/ionicons.2c2ae068be3b089e0a5b59abb1831550.eot",
+    "hash": "2c2ae068be3b089e0a5b59abb1831550"
+  },
+  {
+    "file": "assets/ionicons.621bd386841f74e0053cb8e67f8a0604.svg",
+    "hash": "621bd386841f74e0053cb8e67f8a0604"
+  },
+  {
+    "file": "css/app.d41d8cd98f00b204e9800998ecf8427e.css",
+    "hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  {
+    "file": "css/vendor.99d495472afb23f365c55853a42ee858.css",
+    "hash": "99d495472afb23f365c55853a42ee858"
+  },
+  {
+    "file": "index.html",
+    "hash": "ade980d23514ed336f6af1208498ed4f"
+  },
+  {
+    "file": "js/app.01c33fa4c403dc3af4d2.js",
+    "hash": "f264623137c360f04c5b5f131e8fd5fd"
+  },
+  {
+    "file": "js/app.42da3c729204cb36fb67.js",
+    "hash": "111efaae991fcd26703b51043bbf2d34"
+  },
+  {
+    "file": "js/app.b33ec7e1b912fc8e891b.js",
+    "hash": "db43b2d0af6658a16a42ee79cf28cab2"
+  },
+  {
+    "file": "js/vendor.850ce9afba69feb8c0b8.js",
+    "hash": "9c1d3fc8a6fb4f9a6d80d2ea2ddf9329"
+  }
+]
