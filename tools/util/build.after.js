@@ -72,8 +72,6 @@ module.exports = function() {
 
       data = data.replace(/\.\.\//g, './');
 
-      console.log(666, data);
-
       fs.writeFile(filePath, data, {
         encoding: 'utf-8'
       });
