@@ -35,9 +35,8 @@ module.exports = {
               if (err) {
                 throw err;
               }
-              console.log('');
-              console.log('copy ' + path.join(copyPath, filename) + ' to ' + path
-                .join(toPath, filename));
+              // console.log('');
+              // console.log('copy ' + path.join(copyPath, filename) + ' to ' + path.join(toPath, filename));
               fs.writeFile(path.join(toPath, filename), data, {
                 encoding: isImg ? 'binary' : 'utf-8'
               });

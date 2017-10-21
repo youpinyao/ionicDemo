@@ -69,8 +69,8 @@ module.exports = function() {
 
             $(this).attr(d, nAttr);
 
-            console.log(attr, 'to', nAttr);
-            console.log('----------');
+            // console.log(attr, 'to', nAttr);
+            // console.log('----------');
           }
         });
       });

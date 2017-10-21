@@ -7,10 +7,9 @@
 ## 环境要求
 
 ```node
-node
-cordova
-ionic
-cordova-hot-code-push-cli
+node // 官网下载安装 stable
+cordova // npm i cordova -g
+ionic // npm i ionic -g
 ```
 
 ## 调试
@@ -18,8 +17,11 @@ cordova-hot-code-push-cli
 ### 本地浏览器调试
 
 ```node
+
 npm run webpack:start
 访问：http://localhost:8686
+如果启动成功打不开，找个src下文件save一下
+
 ```
 
 ### 真机调试
@@ -34,14 +36,18 @@ config.xml 配置文件
 
 2. 在同一局域网下打开app
 
+3. 修改文件就会同步刷新
+
 ```
 
 ## 构建
 
 ``` node
+正式包配置 <config-file url="http://my.website.com/www/chcp.json" />
+
 1. npm run build
 
-2. 发布热更新服务器
+2. www文件发布热更新服务器
 
 ```
 

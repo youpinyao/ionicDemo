@@ -3,6 +3,6 @@
   "ios_identifier": "",
   "android_identifier": "",
   "update": "now",
-  "content_url": "https://10251761.ngrok.io",
-  "release": "2017.10.21-20.21.39"
+  "content_url": "http://192.168.3.11:31284",
+  "release": "2017.10.21-21.35.00"
 }
