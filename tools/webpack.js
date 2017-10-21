@@ -10,6 +10,7 @@ const util = require('./util/util.js');
 const clearConsole = require('./util/clearConsole.js');
 
 const configs = {
+  watch: require('./config/watch.config.js'),
   build: require('./config/build.config.js'),
   dev: require('./config/dev.config.js'),
   dll: require('./config/dll.config.js'),
@@ -22,6 +23,23 @@ switch (type) {
     util.delDll();
     webpack(webpackConfig()).run(runCallback);
     console.log(chalk.green('\r\nbuild dll complete \r\n'));
+
+    break;
+  case 'watch':
+    const dllHasChange = util.compareDll(configs.dll().entry.vendor[0], configs.dll().output.path);
+
+    if (dllHasChange) {
+      const dllCompiler = webpack(configs.dll());
+
+      dllCompiler.run((err, stats) => {
+        if (runCallback(err, stats)) {
+          console.log(chalk.green('\r\nbuild dll complete \r\n'));
+          runWatch();
+        }
+      });
+    } else {
+      runWatch();
+    }
 
     break;
   case 'build':
@@ -55,6 +73,17 @@ switch (type) {
     }
     break;
   default:
+}
+
+function runWatch() {
+  webpack(webpackConfig()).watch({
+    ignored: /node_modules/,
+  }, (err, stats) => {
+    if (runCallback(err, stats)) {
+      require('./util/build.after.js')();
+      console.log(chalk.green('\r\nbuild dist complete \r\n'));
+    }
+  });
 }
 
 function runDev() {

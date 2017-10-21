@@ -6,6 +6,7 @@
   "scripts": {
     "build": "node ./tools/webpack build",
     "start": "node ./tools/webpack dev",
+    "watch": "node ./tools/webpack watch",
     "dll": "node ./tools/webpack dll"
   },
   "author": "",

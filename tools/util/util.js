@@ -7,6 +7,48 @@ const md5 = require('md5');
 const config = require('../config/config.js');
 
 module.exports = {
+  copyFile(copyPath, toPath) {
+    if (fs.existsSync(toPath)) {
+      del.sync([toPath], {
+        force: true
+      });
+    }
+
+    fs.mkdirSync(toPath);
+
+    fs.readdir(copyPath, (err, files) => {
+      if (err) {
+        throw err;
+      }
+
+      files.forEach(filename => {
+        fs.stat(path.join(copyPath, filename), (ferr, fstats) => {
+          if (ferr) {
+            throw ferr;
+          }
+
+          const isImg = /.(jpeg|jpg|png|gif|psd|svg|woff|eot|ttf)$/g.test(filename);
+
+          if (fstats.isFile()) {
+            fs.readFile(path.join(copyPath, filename), isImg ? 'binary' : 'utf-8', (
+              err, data) => {
+              if (err) {
+                throw err;
+              }
+              console.log('');
+              console.log('copy ' + path.join(copyPath, filename) + ' to ' + path
+                .join(toPath, filename));
+              fs.writeFile(path.join(toPath, filename), data, {
+                encoding: isImg ? 'binary' : 'utf-8'
+              });
+            });
+          } else {
+            this.copyFile(path.join(copyPath, filename), path.join(toPath, filename));
+          }
+        });
+      });
+    });
+  },
   compareDll(filePath, output) {
     let version = {
       hash: '',
@@ -61,7 +103,7 @@ module.exports = {
     entrys.forEach(v => {
       const htmlName = this.getName(v.html);
       const jsName = this.getName(v.js);
-      const chunks = [jsName, 'config'];
+      const chunks = [jsName];
 
       if (isDev !== true) {
         chunks.push('vendor');
@@ -70,6 +112,12 @@ module.exports = {
       plugins.push(new HtmlWebpackPlugin({
         title: htmlName,
         minify: false,
+        chunksSortMode(chunk1, chunk2) {
+          var order = ['vendor', 'app'];
+          var order1 = order.indexOf(chunk1.names[0]);
+          var order2 = order.indexOf(chunk2.names[0]);
+          return order1 - order2;
+        },
         filename: v.outHtml || v.html,
         template: v.html,
         chunks,
@@ -80,7 +128,7 @@ module.exports = {
     return plugins;
   },
   entrys(isDev) {
-    const entry = {};
+    let entry = {};
 
     entrys.forEach(v => {
       const jsName = this.getName(v.js);
@@ -94,8 +142,6 @@ module.exports = {
         ]);
       }
     });
-
-    entry.cordova = './cordova.js';
 
     return entry;
   }

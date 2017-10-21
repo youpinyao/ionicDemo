@@ -2,6 +2,7 @@ const path = require('path');
 const fs = require('fs');
 const config = require('../config/config.js');
 const cheerio = require('cheerio');
+const util = require('./util');
 
 const buildPath = path.resolve(__dirname, config.path);
 
@@ -28,41 +29,6 @@ module.exports = function() {
       });
     });
   });
-
-  function copyFile(copyPath, toPath) {
-    fs.mkdirSync(toPath);
-    fs.readdir(copyPath, (err, files) => {
-      if (err) {
-        throw err;
-      }
-
-      files.forEach(filename => {
-        fs.stat(path.join(copyPath, filename), (ferr, fstats) => {
-          if (ferr) {
-            throw ferr;
-          }
-
-          const isImg = /.(jpeg|jpg|png|gif|psd)$/g.test(filename);
-
-          if (fstats.isFile()) {
-            fs.readFile(path.join(copyPath, filename), isImg ? 'binary' : 'utf-8', (
-              err, data) => {
-              if (err) {
-                throw err;
-              }
-              console.log('copy ' + path.join(copyPath, filename) + ' to ' + path
-                .join(toPath, filename));
-              fs.writeFile(path.join(toPath, filename), data, {
-                encoding: isImg ? 'binary' : 'utf-8'
-              });
-            });
-          } else {
-            copyFile(path.join(copyPath, filename), path.join(toPath, filename));
-          }
-        });
-      });
-    });
-  }
 
   function convertManifest(filePath) {
     fs.readFile(filePath, 'utf-8', (err, data) => {
