@@ -39,8 +39,13 @@ config.xml 配置文件
 ## 构建
 
 ``` node
-npm run build
+1. npm run build
+
+2. 发布热更新服务器
+
 ```
+
+详情看[热更新](#热更新)文档
 
 ## 设置开屏图
 
@@ -53,3 +58,4 @@ npm run build
 ## 热更新
 
 [https://github.com/nordnet/cordova-hot-code-push](https://github.com/nordnet/cordova-hot-code-push)
+[https://github.com/nordnet/cordova-hot-code-push-cli#deploy-command](https://github.com/nordnet/cordova-hot-code-push-cli#deploy-command)

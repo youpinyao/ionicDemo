@@ -8,11 +8,9 @@
     "webpack:start": "node ./tools/webpack dev",
     "webpack:watch": "node ./tools/webpack watch",
     "webpack:dll": "node ./tools/webpack dll",
-
     "hot:server": "cordova-hcp server",
     "hot:init": "cordova-hcp init",
     "hot:build": "cordova-hcp build ./www",
-
     "start": "npm run webpack:watch & npm run hot:server",
     "build": "npm run webpack:build && cordova-hcp hot:build"
   },

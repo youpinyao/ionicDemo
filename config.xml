@@ -23,20 +23,15 @@
     <preference name="FadeSplashScreenDuration" value="300" />
     <preference name="SplashShowOnlyFirstTime" value="false" />
     <preference name="ShowSplashScreenSpinner" value="false" />
-
     <hook src="hooks/after_prepare/update_ios_displayname.js" type="after_prepare" />
     <hook src="hooks/after_prepare/update_ios_region.js" type="after_prepare" />
     <hook src="hooks/after_prepare/update_android_gradle.js" type="after_prepare" />
-
-     <!-- 热更新配置 -->
     <chcp>
         <auto-download enabled="true" />
         <auto-install enabled="true" />
         <local-development enabled="true" />
         <config-file url="http://192.168.3.11:31284/chcp.json" />
-        <!-- <config-file url="http://my.website.com/www/chcp.json" /> -->
     </chcp>
-
     <platform name="android">
         <preference name="AutoHideSplashScreen" value="false" />
         <preference name="SplashScreenDelay" value="3000000" />
