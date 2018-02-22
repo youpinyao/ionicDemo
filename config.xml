@@ -30,7 +30,7 @@
         <auto-download enabled="true" />
         <auto-install enabled="true" />
         <local-development enabled="true" />
-        <config-file url="http://192.168.3.11:31284/chcp.json" />
+        <config-file url="http://192.168.3.254:31284/chcp.json" />
     </chcp>
     <platform name="android">
         <preference name="AutoHideSplashScreen" value="false" />

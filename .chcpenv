@@ -1,4 +1,4 @@
 {
-  "content_url": "http://192.168.3.11:31284",
-  "config_url": "http://192.168.3.11:31284/chcp.json"
+  "content_url": "http://169.254.33.130:31284",
+  "config_url": "http://169.254.33.130:31284/chcp.json"
 }
